@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="final.css" rel="stylesheet">
+    <title>B2B TPAR - Add trading Partner</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="tpar-header" class="container-fluid bg-danger text-light text-center">
+        <div class="navbar navbar-fixed-top row">
+            <div class="logo col-sm-1 d-none d-lg-block"><img src="sf-b2b-logo1.png" /></div>
+            <div class="col-lg-10 ">
+                <h5>TPAR - Third Party Associate Register</h5>
+            </div>
+            <div class="col-sm-1  d-none d-lg-block">
+                <button type="button" class="btn btn-sm btn-light btn-outline-secondary">Close</button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row mt-2">
+            <div class="h4 col-sm-6 text-muted offset-sm-3">Add Trading Partner</div>
+            <div class="col-lg-6"></div>
+        </div>
+        <div class="row">
+            <form name="add-tp" class="col-lg-6 offset-1 mb-4">
+                <div class="h6 col-sm-4 card-subtitle text-muted text-right mb-2">General Information</div>
+                <div class="form-group row mb-1">
+                    <label for="lbname" class="col-sm-4 required">Business / Last Name:</label>
+                    <div class="col-sm-5">
+                        <input class="form-control form-control-sm" name="lbname" type="text" maxlength="120" id="lbname" placeholder="Business or Last Name" />
+                    </div>
+                    <div class="col-sm-3">
+                        <small class="form-text">(Last Name if individual)</small>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="firstname" class="col-sm-4">First Name:</label>
+                    <div class="col-sm-5">
+                        <input class="form-control form-control-sm" type="text" id="firstname" id="fname" maxlength="45" placeholder="First Name" />
+                    </div>
+                    <div class="col-sm-3">
+                        <small class="form-text">(only if individual)</small>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="state" class="col-sm-4 required">Relation with State Farm:</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="state" name="state">
+                        <option value="State">Choose a relationship with State Farm</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="tin" class="col-sm-4 required">Tax Id:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="tin" placeholder="Tax Id #" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="sttaxcd" class="col-sm-4 required">State Tax Code:</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="sttaxcd" name="stateTaxCd">
+                        <option disabled="disabled">choose State Tax code</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="npid" class="col-sm-4">NPID:</label>
+                    <div class="col-sm-4">
+                        <input class="form-control form-control-sm" type="text" id="npid" size="10" placeholder="National Provider Id" />
+                    </div>
+                    <div class="pt-1">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" name="nameSearchType" value="BUSINESS"><label class="form-check-label">Business</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" name="nameSearchType" value="CONTACT"><label class="form-check-label">Contact</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-1 my-1">
+                    <label for="cntrycd" class="col-sm-4">Country Code:</label>
+                    <div class="col-sm-2">
+                        <input id="bcntrycd" class="form-control form-control-sm" type="text" disabled="disabled" placeholder="Cntry Cd" />
+                    </div>
+                    <div class="col-sm-6 mt-1">
+                        <div class="form-check">
+                            <input type="checkbox" id="bIntPhCheck" class="form-check-input" /> <label class="form-check-label">International Phone
+                            Number</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="bphone" class="col-sm-4 required">Phone:</label>
+                    <div class="col-sm-4">
+                        <input class="form-control form-control-sm" type="text" id="bphone" placeholder=" Ph #" />
+                    </div>
+                    <label for="bphoneext" class="col-sm-2 ">Extension:</label>
+                    <div class="col-sm-2 pl-0">
+                        <input class="form-control form-control-sm" type="text" id="bphoneext" placeholder="Ext" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="bcell" class="col-sm-4">Cell Phone:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="bcell" placeholder="cell #" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="bfax" class="col-sm-4">Fax:</label>
+                    <div class="col-sm-4">
+                        <input class="form-control form-control-sm" type="text" id="bfax" placeholder=" Fax #" />
+                    </div>
+                    <label for="bfaxext" class="col-sm-2">Extension:</label>
+                    <div class="col-sm-2 pl-0">
+                        <input class="form-control form-control-sm" type="text" id="bfaxext" placeholder="Ext" />
+                    </div>
+                </div>
+                <div class="form-group row mt-1">
+                    <label for="bcell" class="col-sm-4 required">E-mail:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="bcell" placeholder="Email address" />
+                    </div>
+                </div>
+                <div class="h6 card-subtitle col-sm-4  text-right text-muted mb-2">Business Address</div>
+                <div class="form-group row my-1 ">
+                    <label for="cnntryovsmtry" class="col-sm-4">Country / Overseas Military:</label>
+                    <div class="col-sm-1 mt-1">
+                        <input type="radio" checked="checked" name="bCountryOrMil" class="form-check form-check-inline" />
+                    </div>
+                    <div class="col-sm-2 px-0">
+                        <select class="form-control form-control-sm" id="cnntryovsmtry" name="businessCountry">
+                        <option disabled="disabled">Country</option>
+                    </select>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input mt-1" name="bCountryOrMil" value="OVERSEAS" disabled="disabled"><label class="form-check-label">Overseas Military</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="baddr1" class="col-sm-4 required">Address Line 1:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="baddr1" placeholder="Address line 1" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="baddr2" class="col-sm-4">Address Line 2:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="baddr2" placeholder="Address line 2" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="bcity" class="col-sm-4 required">City:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="bcity" placeholder="City name" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="bstate" class="col-sm-4 required">State:</label>
+                    <div class="col-sm-2">
+                        <select class="form-control form-control-sm" id="bstate" name="businessState">
+                        <option disabled="disabled">choose State</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="bzip" class="col-sm-4 required">Zip:</label>
+                    <div class="col-sm-3">
+                        <input class="form-control form-control-sm" type="text" maxlength="10" id="bzip" placeholder="Zip or Postal Code" />
+                    </div>
+                </div>
+                <!-- Role information Start-->
+                <div class="row card-subtitle mt-4">
+                    <div class="h6 text-muted mb-2 col-sm-6">
+                        Role General Information <small>(optional)</small> <i class="col-sm-1  fas fa-question-circle fa-lg" data-toggle="popover" title="Role" data-html="true" data-content="<p>Select the role that best describes your relationship with State Farm. </p>
+                            <p>The role is optional at this time, but will be required before the trading partner will be allowed to register. </p>"></i>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rolenm" class="col-sm-4">Role:</label>
+                    <div class="col-sm-6">
+                        <select class="form-control form-control-sm" id="rolenm" name="roleName">
+                        <option>choose Role</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label class="col-sm-4">Role Status:</label>
+                    <div class="pt-1 col-sm-8">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" checked="checked" class="form-check-input" name="nameSearchType" value="TPAR_B2B"><label class="form-check-label">Enable on TPAR and B2B Directory</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" name="nameSearchType" value="TPAR_ONLY"><label class="form-check-label">Enable
+                            on TPAR only</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label class="col-sm-4" for="barn">Business Area Ref Number:</label>
+                    <div class="col-sm-3">
+                        <input class="form-control form-control-sm" type="text" id="barn" placeholder="BARN #" />
+                    </div>
+                    <i class="col-sm-1 fas fa-question-circle fa-lg btn" data-toggle="modal" data-target="#barnmodal"></i>
+                </div>
+                <div class="row card-subtitle mt-4">
+                    <div class="h6 text-muted mb-2 col-sm-6">
+                        Role Contact Information <small>(optional)</small> <i class="col-sm-1  fas fa-question-circle fa-lg" data-toggle="popover" title="Role Contact Info" data-html="true" data-content="<p>List the contact information pertaining to the role that will be added.</p>"></i>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rlastname" class="col-sm-4">Last Name:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="rlastname" placeholder="Role's Last Name" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rfirstname" class="col-sm-4">First Name:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="rfirstname" placeholder="Role's First Name" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rcntrycd" class="col-sm-4">Country Code:</label>
+                    <div class="col-sm-2">
+                        <input class="form-control form-control-sm" type="text" id="rcntrycd" disabled="disabled" placeholder="Cntry Cd" />
+                    </div>
+                    <div class="col-sm-6 mt-1">
+                        <div class="form-check">
+                            <input type="checkbox" id="rIntPhCheck" class="form-check-input" /> <label class="form-check-label">International Phone
+                            Number</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rphone" class="col-sm-4">Phone:</label>
+                    <div class="col-sm-4">
+                        <input class="form-control form-control-sm" type="text" id="rphone" placeholder=" Role's Ph #" />
+                    </div>
+                    <label for="rphoneext" class="col-sm-2 ">Extension:</label>
+                    <div class="col-sm-2 pl-0">
+                        <input class="form-control form-control-sm" type="text" id="rphoneext" placeholder="Ext" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rcell" class="col-sm-4">Cell Phone:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="rcell" placeholder="Role's cell #" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rfax" class="col-sm-4">Fax:</label>
+                    <div class="col-sm-4">
+                        <input class="form-control form-control-sm" type="text" id="rfax" placeholder="Role's Fax #" />
+                    </div>
+                    <label for="rfaxext" class="col-sm-2">Extension:</label>
+                    <div class="col-sm-2 pl-0">
+                        <input class="form-control form-control-sm" type="text" id="rfaxext" placeholder="Ext" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="remail" class="col-sm-4">E-mail:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" id="remail" placeholder="Role's Email address" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label class="col-sm-4">Contact Address:</label>
+                    <div class="col-sm-6">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" /> <label class="form-check-label">Same as Business Address</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row my-1 ">
+                    <label for="cnntryovsmtry" class="col-sm-4">Country / Overseas Military:</label>
+                    <div class="col-sm-1 mt-1">
+                        <input type="radio" checked="checked" name="roleCountryOrMil" class="form-check form-check-inline" />
+                    </div>
+                    <div class="col-sm-2 px-0">
+                        <select class="form-control form-control-sm" id="cnntryovsmtry" name="roleCountry">
+                        <option disabled="disabled">Country</option>
+                    </select>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input mt-1" name="roleCountryOrMil" value="OVERSEAS" disabled="disabled"><label class="form-check-label">Overseas Military</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="raddr1" class="col-sm-4">Address Line 1:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" name="roleAddress1" type="text" id="raddr1" placeholder="Role's Address line 1" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="raddr2" class="col-sm-4">Address Line 2:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" name="roleAddress2" type="text" id="raddr2" placeholder="Role's Address line 2" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rcity" class="col-sm-4">City:</label>
+                    <div class="col-sm-8">
+                        <input class="form-control form-control-sm" type="text" name="roleCity" id="rcity" placeholder="Role's City" />
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rstate" class="col-sm-4">State:</label>
+                    <div class="col-sm-2">
+                        <select class="form-control form-control-sm" name="roleState" id="rstate">
+                        <option disabled="disabled">choose State</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group row my-1">
+                    <label for="rzip" class="col-sm-4">Zip:</label>
+                    <div class="col-sm-3">
+                        <input class="form-control form-control-sm" type="text" maxlength="10" id="rzip" placeholder="Role's Zip" />
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-8">
+                        <button class="btn btn-sm btn-primary mr-5 px-4" type="submit" value="Search">Add</button>
+                        <button class="btn btn-sm btn-secondary px-3" type="reset" value="Clear">Cancel</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Modal content. Help text explaining BRAN# -->
+            <div class="modal fade" id="barnmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="h6 modal-title" id="exampleModalLabel">What is "Business Area Reference Number" ?</span>
+                        </div>
+                        <div class="modal-body">
+                            <p>The Business Area Reference Number, also known as BARN, is a State Farm assigned number specific to a business area that is used to identify a trading partner. If multiple business areas have interactions with a particular trading partner, then this trading partner could have multiple BARNs.</p>
+                            <p>
+                                <b>Note: </b>Not all business areas assign a BARN to their trading partners so if this is true in your case then you will not enter a BARN.
+                            </p>
+                            <p>Within this application, the Business Area Reference Number is assigned to a particular role not to the trading partner. This is because a role in this application represents a business area. Since each business area can assign it's own BARN for the trading partner we need to collect the BARN on the role not on the trading partner.</p>
+                            <p>Here is an example to help clarify.</p>
+                            <p>Assume you are from the Select Service Consolidator business area and you want to add the role Select Service Consolidator to trading partner ABC Auto Repair. Let's say, in your business area you have assigned ABC123456 as the BARN to this trading partner. When you add the role Select Service Consolidator to ABC Auto Repair, then you will want to put ABC123456 in the Business Area Reference Number field. This way if another area like EFT Receipt Inquiry wants to add the role EFT Receipt Inquiry to ABC Auto Repair, then they will be able to assign their BARN to this trading partner by assigning it to the EFT Receipt Inquiry role.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-secondary align-content-center" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="tpar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
